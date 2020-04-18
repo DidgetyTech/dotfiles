@@ -1,0 +1,6 @@
+alias ni='npm install'
+alias nid='npm install --save-dev'
+alias nr='npm run'
+alias nrt='npm test'
+alias npmupg='npm outdated -g && npm -g update'
+alias npmup='npmupg && npm-check-updates -u && npm install && npm doctor'
