@@ -20,3 +20,8 @@ _rbenv() {
 
   reply=("${(ps:\n:)completions}")
 }
+
+if gem which colorls &> /dev/null ; then
+  local colorls_path=`gem which colorls`
+  source "${colorls_path:h}/tab_complete.sh"
+fi
