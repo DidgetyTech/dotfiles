@@ -1,15 +1,35 @@
 # Local/private config goes in the include
 [include]
         path = ~/.gitconfig.local
-[hub]
-        protocol = https
 [alias]
+        b = branch -vv
+        ba = branch -vv --all
         co = checkout
-        st = status
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributors = !$ZSH/bin/git-rank-contributors
-        count   = !git shortlog -sn
+        show-files = "!f() { \
+                        commit=\"${1:-HEAD}\"; \
+                        git diff --stat ${commit}~1 ${commit}; \
+                      }; f"
+        sf = show-files
+        amend = commit --amend
+        fixup = commit --fixup
+        wip = "!f() { git commit --message \"WIP $1\" --no-verify; }; f"
+        g = log --graph --pretty=format:'%C(yellow)%h %C(red)%ad %C(green)%an%C(auto)%d%C(reset) %s' --abbrev-commit --date=short
+        unstage = reset HEAD --
+        show-short = "!f() { \
+                        commit=\"${1:-HEAD}\"; \
+                        git show --quiet ${commit} && git show-files ${commit}; \
+                      }; f"
+        ss = show-short
+        st = status --short --branch
+        count = shortlog --summary --numbered
+        assume = update-index --assume-unchanged
+        unassume = update-index --no-assume-unchanged
+        # list assumed files
+        assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+        ignore = "!f(){ echo \"$1\" >> .gitignore; }; f"
+        wtf = !${ZSH}/bin/git-wtf
+        promote = !${ZSH}/bin/git-promote
+        rank-contributors = !${ZSH}/bin/git-rank-contributors
 [color]
         diff = auto
         status = auto
@@ -18,19 +38,32 @@
 [core]
         excludesfile = ~/.gitignore
         editor = vim
+        pager = less --quit-if-one-screen --LONG-PROMPT --RAW-CONTROL-CHARS --no-init --ignore-case
 [apply]
         whitespace = nowarn
-[mergetool]
-        keepBackup = false
+[branch]
+        autosetupmerge = true
+[diff]
+        algorithm = patience
 [difftool]
         prompt = false
 [help]
         autocorrect = 1
+[log]
+        decorate = full
+[merge]
+        conflictstyle = diff3
+        prompt = false
+        tool = vimdiff
+[mergetool]
+        keepBackup = false
 [push]
         # See `git help config` (search for push.default)
         # for more information on different options of the below setting.
         #
         # Setting to git 2.0 default to suppress warning message
         default = simple
-[credential]
-	helper = osxkeychain
+[rebase]
+        autosquash = true
+[rerere]
+        enabled = true

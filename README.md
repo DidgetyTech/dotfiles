@@ -65,7 +65,11 @@ support will be minimal. Please fork and tweak for your configuration.
 
 ## thanks
 
-I forked [Zach Holman][holman]'s [dotfiles](http://github.com/holman/dotfiles).
+I forked [Zach Holman][holman]'s [dotfiles](http://github.com/holman/dotfiles) which is the basis of this repo.
 
+Various git aliases were inspired by:
+* Lukáš Zapleta's [My Git aliases again](https://lukas.zapletalovi.com/2012/07/my-git-aliases-again.html)
+* nicola paolucci - @durdn's [Must Have Git Aliases: Advanced Examples](https://www.durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/)
+* William Duclot's [Up Your Git Game With Advanced Git Aliases](https://blog.theodo.com/2017/06/git-game-advanced-git-aliases/)
 
   [holman]: http://github.com/holman
