@@ -7,4 +7,9 @@ set -e
 cd "$(dirname $0)"/..
 
 # find the installers and run them iteratively
+# these installers should be independent of each other
+# they can run in any order
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+
+# TODO when does colorls get installed?
+# TODO run pm-install.sh now, presuming that the related Package managers will be installed in an install.sh
