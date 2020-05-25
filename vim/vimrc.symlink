@@ -1,4 +1,61 @@
-syntax on
+let g:LargeFile = 100           " Don't syntax highlight files larger than NUM megs
+syntax enable
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+set autoindent
+set backspace=indent,eol,start  " Backspace across lines and indent
+set expandtab                   " Ignore tabs and replace with spaces
+set history=50
+set ignorecase                  " Case insensitive matching
+set incsearch
+set laststatus=2                " Always show status line
+set lazyredraw                  " Performance booster
+set linebreak                   " Wrap lines at word boundaries
+set list                        " Toggle on listchars
+set listchars=tab:>-,trail:-    " Visually prefix tabs with '>' and trailing whitespace with '-'
+set modelines=0                 " Disable due to vulnerabilities
+set nocompatible                " Vim defaults
+set nofoldenable                " Disable folds
+set nomodeline                  " Disable due to vulnerabilities
+set notimeout
+set number                      " Use line numbers
+set ruler
+set relativenumber              " Line numbers are relative to the current line
+set scrolloff=1                 " Don't let the cursor get too close to the edge
+set shiftwidth=2
+set showcmd                     " Show (partial) command in the status line
+set showmatch                   " Highlight matching brackets
+set spelllang="en_us"           " Load en-US spelling dictionary
+set smarttab                    " <Tab> inserts blanks according shiftwidth
+set splitbelow
+set splitright
+set softtabstop=4
+set suffixes=.bak.~,swp,.o,.info,.aux,.log,.out,.class,.pyc,.ts.d   " Lower priority files when auto-completing file names
+set textwidth=80
+set virtualedit=block           " Let cursor be in a virtual character space on visual block
+set wildmenu                    " Visual autocomplete for comamnd menu
+set wildmode=list:longest,full  " List all options, match the longest
+
+" -----------------------------
+" Movement
+" -----------------------------
+
+set whichwrap+=<,>,[,],h,~    " Arrow keys can wrap in normal mode
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
+" move to beginning/end of line
+nnoremap B ^
+nnoremap E $
+
+" split navigations
+nnoremap <C-J> <C-W><C-J>       " Ctrl+J to move down a split
+nnoremap <C-K> <C-W><C-K>       " Ctrl+K to move up a split
+nnoremap <C-L> <C-W><C-L>       " Ctrl+L to move right a split
+nnoremap <C-H> <C-W><C-H>       " Ctrl+H to move left a split
+
+" -----------------------------
+" File Type
+" -----------------------------
+filetype indent plugin on       " Turn on ft detection, ft plugins, and ft indents
