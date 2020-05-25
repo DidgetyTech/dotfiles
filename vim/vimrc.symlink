@@ -80,3 +80,39 @@ augroup automation
     " http://vim.wikia.com/wiki/Remove_unwated_spaces
     autocmd FileType shell,vim,yaml,python,markdown,ruby,gitcommit,gitconfig,gitrebase,javascript,json,vue,typescript autocmd BufWritePre <buffer> %s/\s\+$//e
 augroup END
+
+" -----------------------------
+" Spelling
+" -----------------------------
+" Don't mark URL-like things as spelling errors
+syntax match UrlNoSpell '\w\+:\/\/\S\+' contains=@NoSpell
+
+" Force to use underline for spell check results
+" TODO re-apply if the theme is changed
+highlight SpellBad
+\   cterm=underline,italic
+\   ctermfg=red
+\   ctermbg=none
+\   term=reverse
+highlight SpellCap
+\   cterm=underline,italic
+\   ctermfg=none
+\   ctermbg=none
+\   term=reverse
+highlight SpellLocal
+\   cterm=underline,italic
+\   ctermfg=cyan
+\   ctermbg=none
+\   term=reverse
+highlight SpellRare
+\   cterm=underline,italic
+\   ctermfg=cyan
+\   ctermbg=none
+\   term=reverse
+
+augroup spellconfig
+    autocmd!
+    " Turn on spelling
+    autocmd FileTYpe markdown,gitcommit,gitconfig,gitrebase,text
+      \ setlocal spell
+augroup END
