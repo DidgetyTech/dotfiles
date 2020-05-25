@@ -1,6 +1,9 @@
 let g:LargeFile = 100           " Don't syntax highlight files larger than NUM megs
 syntax enable
 
+" Do not set tabstop, shiftwidth, or softtabstop here to allow filetype defaults
+" to be used. To override, put the setting in an ftplugin after file.
+
 set autoindent
 set backspace=indent,eol,start  " Backspace across lines and indent
 set expandtab                   " Ignore tabs and replace with spaces
@@ -21,14 +24,12 @@ set number                      " Use line numbers
 set ruler
 set relativenumber              " Line numbers are relative to the current line
 set scrolloff=1                 " Don't let the cursor get too close to the edge
-set shiftwidth=2
 set showcmd                     " Show (partial) command in the status line
 set showmatch                   " Highlight matching brackets
-set spelllang="en_us"           " Load en-US spelling dictionary
+set spelllang=en_us             " Load en-US spelling dictionary
 set smarttab                    " <Tab> inserts blanks according shiftwidth
 set splitbelow
 set splitright
-set softtabstop=4
 set suffixes=.bak.~,swp,.o,.info,.aux,.log,.out,.class,.pyc,.ts.d   " Lower priority files when auto-completing file names
 set textwidth=80
 set virtualedit=block           " Let cursor be in a virtual character space on visual block
@@ -56,6 +57,26 @@ nnoremap <C-L> <C-W><C-L>       " Ctrl+L to move right a split
 nnoremap <C-H> <C-W><C-H>       " Ctrl+H to move left a split
 
 " -----------------------------
-" File Type
+" File Type mappings
 " -----------------------------
 filetype indent plugin on       " Turn on ft detection, ft plugins, and ft indents
+
+augroup filetypes
+    autocmd!
+    autocmd BufNewFile,BufRead *.git/{,worktrees/*/}{COMMIT_EDIT,TAG_EDIT,MERGE,_,}MSG set filetype=gitcommit
+    autocmd BufNewFile *.git/config,.gitconfig,gitconfig set filetype=gitconfig
+    autocmd BufNewFile,BufRead git-rebase-todo set filetype=gitrebase
+    autocmd BufNewFile,BufRead *.vim.symlink set filetype=vim
+augroup END
+
+" -----------------------------
+" File Type automation
+"
+" Too common to be in <filtetype>.vim, unless there's a better way to add it
+" -----------------------------
+augroup automation
+    autocmd!
+    " Remove trailing whitespace
+    " http://vim.wikia.com/wiki/Remove_unwated_spaces
+    autocmd FileType shell,vim,yaml,python,markdown,ruby,gitcommit,gitconfig,gitrebase,javascript,json,vue,typescript autocmd BufWritePre <buffer> %s/\s\+$//e
+augroup END

@@ -120,8 +120,9 @@ link_file () {
 
   if [ "$skip" != "true" ]  # "false" or empty
   then
-    ln -s "$1" "$2"
-    success "linked $1 to $2"
+    mkdir -p "$(dirname $dst)"
+    ln -s "$src" "$dst"
+    success "linked $src to $dst"
   fi
 }
 
@@ -130,9 +131,11 @@ install_dotfiles () {
 
   local overwrite_all=false backup_all=false skip_all=false
 
-  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
+  for src in $(find -H "$DOTFILES_ROOT" -name '*.symlink' -not -path '*.git*')
   do
-    dst="$HOME/.$(basename "${src%.*}")"
+    dst="${src%.symlink}"
+    dst="${dst#${PWD}/*/}"  # remove the topic folder
+    dst="$HOME/.${dst}"
     link_file "$src" "$dst"
   done
 }

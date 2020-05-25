@@ -1,0 +1,9 @@
+setlocal autoindent
+setlocal expandtab
+setlocal linebreak
+setlocal shiftwidth=2
+setlocal smarttab
+setlocal softtabstop=2
+setlocal spell
+setlocal tabstop=2
+setlocal wrap
