@@ -56,6 +56,20 @@ nnoremap <C-K> <C-W><C-K>       " Ctrl+K to move up a split
 nnoremap <C-L> <C-W><C-L>       " Ctrl+L to move right a split
 nnoremap <C-H> <C-W><C-H>       " Ctrl+H to move left a split
 
+" disable arrow keys, force HJKL
+nnoremap <Left> :echo "No left for you! Use 'h'."<CR>
+vnoremap <Left> :<C-u>echo "No left for you! Use 'h'."<CR>
+inoremap <Left> <C-o>:echo "No left for you! Use 'h'."<CR>
+nnoremap <Right> :echo "No right for you! Use 'l'."<CR>
+vnoremap <Right> :<C-u>echo "No right for you! Use 'l'."<CR>
+inoremap <Right> <C-o>:echo "No right for you! Use 'l'."<CR>
+nnoremap <Up> :echo "No up for you! Use 'k'."<CR>
+vnoremap <Up> :<C-u>echo "No up for you! Use 'k'."<CR>
+inoremap <Up> <C-o>:echo "No up for you! Use 'k'."<CR>
+nnoremap <Down> :echo "No down for you! Use 'j'."<CR>
+vnoremap <Down> :<C-u>echo "No down for you! Use 'j'."<CR>
+inoremap <Down> <C-o>:echo "No down for you! Use 'j'."<CR>
+
 " -----------------------------
 " File Type mappings
 " -----------------------------
