@@ -20,6 +20,10 @@
                         git show --quiet ${commit} && git show-files ${commit}; \
                       }; f"
         ss = show-short
+        ssig = "!f() { \
+                        commit=\"${1:-HEAD}\"; \
+                        git show --show-signature --quiet ${commit} && git show-files ${commit}; \
+                      }; f"
         st = status --short --branch
         count = shortlog --summary --numbered
         assume = update-index --assume-unchanged
