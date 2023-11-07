@@ -1,0 +1,109 @@
+tap "homebrew/bundle"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "vitorgalvao/tiny-scripts"
+# Tool for generating GNU Standards-compliant Makefiles
+brew "automake"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# GNU internationalization (i18n) and localization (l10n) library
+brew "gettext"
+# Manage compile and link flags for libraries
+brew "pkg-config"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# C string library for manipulating Unicode strings
+brew "libunistring"
+# International domain name library (IDNA2008, Punycode and TR46)
+brew "libidn2"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
+# Emacs dependency management
+brew "cask"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# GNU compiler collection
+brew "gcc"
+# Distributed revision control system
+brew "git"
+# X.509 and CMS library
+brew "libksba"
+# Library for command-line editing
+brew "readline"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+# Development kit for the Java programming language
+brew "openjdk"
+# Open-source build automation tool based on the Groovy and Kotlin DSL
+brew "gradle"
+# Manage your Java environment
+brew "jenv"
+# Light HTTP/1.1 server library
+brew "libmicrohttpd"
+# Generic library support script
+brew "libtool"
+# YAML Parser
+brew "libyaml"
+# Port scanning utility for large networks
+brew "nmap"
+# Platform built on V8 to build network applications
+brew "node"
+# Library that interfaces with selected Z-Wave PC controllers
+brew "open-zwave"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@1.1"
+# Python version management
+brew "pyenv"
+# Command-line interface for SQLite
+brew "sqlite"
+# Install various Ruby versions and implementations
+brew "ruby-build"
+# Ruby version manager
+brew "rbenv"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
+# Vi 'workalike' with many additional features
+brew "vim"
+# Internet file retriever
+brew "wget"
+# General-purpose lossless data-compression library
+brew "zlib"
+# UNIX shell (command interpreter)
+brew "zsh"
+# Additional completion definitions for zsh
+brew "zsh-completions"
+# Informative git prompt for zsh
+brew "zsh-git-prompt"
+# Quickly repair outdated/broken Casks from homebrew-cask
+brew "vitorgalvao/tiny-scripts/cask-repair"
+# Automatic tiling window manager similar to xmonad
+cask "amethyst"
+# Voice and text chat software
+cask "discord"
+# App to build and share containerized applications and microservices
+cask "docker"
+# Client for the Dropbox cloud storage service
+cask "dropbox"
+# Web browser
+cask "firefox"
+cask "font-source-code-pro"
+cask "font-source-code-pro-for-powerline"
+cask "font-sourcecodepro-nerd-font"
+cask "font-sourcecodepro-nerd-font-mono"
+# Web browser
+cask "google-chrome"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
+cask "java"
+# Tool to manage the size and position of windows
+cask "shiftit"
+# Team communication and collaboration software
+cask "slack"
+# Music streaming service
+cask "spotify"
+# Text editor for code, markup and prose
+cask "sublime-text"
+# Multimedia player
+cask "vlc"
+# Lossless audio decoder
+cask "xld"
