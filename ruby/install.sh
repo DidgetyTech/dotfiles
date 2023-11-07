@@ -10,3 +10,8 @@ fi
 if command rvm ; then
   rvm install ruby-head || (yes | rvm upgrade ruby-head)
 fi
+
+# Upgrade gem tool
+gem upgrade --system
+# Upgrade ruby gems
+gem upgrade
