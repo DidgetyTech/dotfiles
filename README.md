@@ -1,3 +1,5 @@
+[![Codacy Security Scan](https://github.com/DidgetyTech/dotfiles/actions/workflows/codacy.yml/badge.svg)](https://github.com/DidgetyTech/dotfiles/actions/workflows/codacy.yml)
+
 # DidgetyTech does dotfiles
 
 Your dotfiles are how you personalize your system. These are mine.
