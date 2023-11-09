@@ -1,4 +1,4 @@
-[![Codacy Security Scan](https://github.com/DidgetyTech/dotfiles/actions/workflows/codacy.yml/badge.svg)](https://github.com/DidgetyTech/dotfiles/actions/workflows/codacy.yml)
+![Mac OS compatibility](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white) ![Not maintained](https://img.shields.io/badge/Maintained%3F-no-red.svg) [![Codacy Security Scan)](https://github.com/DidgetyTech/dotfiles/actions/workflows/codacy.yml/badge.svg)](https://github.com/DidgetyTech/dotfiles/actions/workflows/codacy.yml) [![License](https://img.shields.io/github/license/DidgetyTech/dotfiles.svg)](https://github.com/DidgetyTech/dotfiles/blob/main/LICENSE.md)
 
 # DidgetyTech does dotfiles
 
